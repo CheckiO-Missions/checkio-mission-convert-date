@@ -1,0 +1,141 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! Split the given string into parts. Build a date object from them and convert this date object back into string in correct format. After each step you check if the current data is valid, if not return the phrase immediately.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Split the given string into separate day, month and year with <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> method with "/" separator.
+        </p>
+        <pre class="brush: python">
+dd, mm, yyyy = date.split("/")
+        </pre>
+        <p>
+            Do it inside <a target="_blank" href="https://www.w3schools.com/python/python_try_except.asp">try/except</a> to check if the date is valid and catch <b class="code">ValueError</b> exception.
+        </p>
+        <pre class="brush: python">
+try:
+    dd, mm, yyyy = date.split("/")
+except ValueError:
+    return "Error: Invalid date."
+        </pre>       
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next?
+    </div>
+    <div class="answer">
+        <p>
+            First import <a target="_blank" href="https://docs.python.org/uk/3/library/datetime.html">datetime</a> module and read about class <b class="code">date()</b> and method <b class="code">date.isoformat()</b>. 
+        </p>
+        <pre class="brush: python">
+import datetime
+        </pre>
+        <p>
+            Build date object from separate parts, converted to integer, with <b class="code">date()</b>. Do it inside <b class="code">try/except</b> expression and catch <b class="code">ValueError</b> exception.
+        </p>
+        <pre class="brush: python">
+try:
+    D = datetime.date(int(yyyy), int(mm), int(dd))
+except ValueError:
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I still need a hint.
+    </div>
+    <div class="answer">
+        <p>
+            Convert the date object into ISO format with <b class="code">date.isoformat()</b> and check if it's equal to a string, directly builded from separate parts.
+        </p>
+        <pre class="brush: python">
+res = D.isoformat()
+if res != f"{yyyy}-{mm}-{dd}":
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints, return result and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+import datetime
+
+
+def convert_date(date: str) -> str:
+    
+    try:
+        dd, mm, yyyy = date.split("/")
+    except ValueError:
+        return "Error: Invalid date."
+    
+    try:
+        D = datetime.date(int(yyyy), int(mm), int(dd))
+    except ValueError:
+        return "Error: Invalid date."
+    
+    res = D.isoformat()
+    if res != f"{yyyy}-{mm}-{dd}":
+        return "Error: Invalid date."
+    
+    return res
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>

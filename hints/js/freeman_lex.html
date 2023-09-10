@@ -1,0 +1,146 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! Split the given string into parts. Build a date object from them and convert this date object back into string in correct format. After each step you check if the current data is valid, if not return the phrase immediately.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Split the given string into parts with <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">str.split()</a> method with "/" separator.
+        </p>
+        <pre class="brush: javascript">
+const parts = date.split("/");
+        </pre>
+        <p>
+            You may already check if the number of parts equals 3, otherwise the date is not valid.
+        </p>
+        <pre class="brush: javascript">
+if (parts.length !== 3) return "Error: Invalid date.";
+        </pre>
+        <p>
+            Unpack <b class="code">parts</b> into separate day, month and year.
+        </p>
+        <pre class="brush: javascript">
+const [dd, mm, yyyy] = parts;
+        </pre>        
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next?
+    </div>
+    <div class="answer">
+        <p>
+            Read about class <a target="_blank" href="https://www.w3schools.com/js/js_dates.asp">Date()</a> and methods <b class="code">date.getTime()</b> and <b class="code">date.toISOString()</b>. 
+        </p>
+        <p>
+            Build date object from separate parts with <b class="code">Date()</b>.
+        </p>
+        <pre class="brush: javascript">
+const date = new Date(`${mm}/${dd}/${yyyy}`);
+        </pre>
+        <p>
+            Check if it's a valid date with <b class="code">isNaN</b> and <b class="code">date.getTime()</b>.
+        </p>
+        <pre class="brush: javascript">
+if (isNaN(date.getTime())) return "Error: Invalid date.";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I still need a hint.
+    </div>
+    <div class="answer">
+        <p>
+            Convert the date object into ISO format with <b class="code">date.toISOString()</b>, slice it to 10 characters with <a target="_blank" href="https://www.w3schools.com/jsref/jsref_slice_string.asp">string.slice()</a> method and check if it's equal to a string, directly builded from separate parts.
+        </p>
+        <pre class="brush: javascript">
+const res = date.toISOString().slice(0, 10);
+if (res !== `${yyyy}-${mm}-${dd}`) return "Error: Invalid date.";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints, return result and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function convertDate(dateString: string): string {
+
+    const parts = dateString.split('/');
+    if (parts.length !== 3) return "Error: Invalid date.";
+    const [dd, mm, yyyy] = parts;
+
+    const date = new Date(`${mm}/${dd}/${yyyy}`);
+    if (isNaN(date.getTime())) return "Error: Invalid date.";
+    
+    const res = date.toISOString().slice(0, 10);
+    if (res !== `${yyyy}-${mm}-${dd}`) return "Error: Invalid date.";
+
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            Without using Date object you need additional checking of leap year, days and months.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function convertDate(dateString: string): string {
+
+    const parts = dateString.split('/');
+    if (parts.length !== 3) return "Error: Invalid date.";
+    
+    const [dd, mm, yyyy] = parts;
+    const isLeapYear = (year: number) => (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+    if (mm === "02" && dd === "29" && !isLeapYear(parseInt(yyyy)))
+        return "Error: Invalid date.";
+    
+    if (parseInt(dd) > 31 || parseInt(mm) > 12)
+        return "Error: Invalid date.";
+
+    if (["04", "06", "09", "11"].includes(mm) && parseInt(dd) > 30)
+        return "Error: Invalid date.";
+    
+    return `${yyyy}-${mm}-${dd}`;
+}
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>
