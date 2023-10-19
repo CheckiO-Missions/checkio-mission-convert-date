@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Funkcja ta powinna pobierać ciąg daty w formacie <b>dd/mm/yyyy</b> i konwertować go do formatu <b>yyyy-mm-dd</b>. Jeśli dane wejściowe nie są w poprawnym formacie, funkcja powinna zwrócić komunikat o błędzie <b>"Error: Invalid date."</b>.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}convert-date.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Wejście:</strong> String <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Wyjście:</strong> String <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Przykłady:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Jak jest używany:</strong>
+    <ul>
+        <li><i>w bazach danych, podczas migracji danych z jednego systemu do innego z różnymi wymaganiami dotyczącymi formatu daty;</i></li>
+        <li><i>w komponentach UI selektora daty, gdzie dane wejściowe użytkownika mogą być w innym formacie;</i></li>
+        <li><i>w narzędziach do raportowania w celu standaryzacji formatów dat w różnych źródłach danych.</i></li>  
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Warunki wstępne:</strong>
+    <ul>
+        <li><i>dane wejściowe powinny być ciągiem znaków: date ∈ string;</i></li>
+        <li><i>dane wejściowe powinny pasować do wzorca: dd/mm/yyyy, gdzie 01 ≤ dd ≤ 31, 01 ≤ mm ≤ 12 i 1900 ≤ yyyy ≤ 2100.</i></li>
+    </ul>
+</p>
