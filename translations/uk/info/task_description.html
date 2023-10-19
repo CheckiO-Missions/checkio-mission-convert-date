@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Ця функція повинна отримувати на вхід рядок дати у форматі <b>dd/mm/yyyy</b> та конвертувати його у формат <b>yyyy-mm-dd</b>. Якщо вхідні дані мають неправильний формат, функція повинна повернути повідомлення про помилку <b>"Error: Invalid date."</b>.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}convert-date.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Вхідні дані:</strong> Рядок <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Вихідні дані:</strong> Рядок <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Приклади:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Як використовується:</strong>
+    <ul>
+        <li><i>у базах даних, при перенесенні даних з однієї системи в іншу з різними вимогами до формату дати;</i></li>
+        <li><i>у компонентах користувацького інтерфейсу для вибору дати, де користувацьке введення може бути в іншому форматі;</i></li>
+        <li><i>в інструментах звітування для стандартизації форматів дат у різних джерелах даних.</i></li>  
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Передумови:</strong>
+    <ul>
+        <li><i>вхідні дані мають бути рядком: дата ∈ рядок;</i></li>
+        <li><i>вхідні дані повинні відповідати шаблону: дд/мм/ррр, де 01 ≤ дд ≤ 31, 01 ≤ мм ≤ 12, і 1900 ≤ рррр ≤ 2100.</i></li>
+    </ul>
+</p>
