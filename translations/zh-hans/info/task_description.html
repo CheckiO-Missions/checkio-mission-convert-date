@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    该函数接收格式为<b>dd/mm/yyyy</b> 的日期字符串，并将其转换为格式为<b>yyyy-mm-dd</b> 的日期字符串。如果输入的格式不正确，函数应返回错误信息<b>"Error: Invalid date."</b> 。  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}convert-date.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>输入：</strong>字符串 <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>输出： 字符串</strong>字符串 <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>示例</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>如何使用：</strong>
+    <ul>
+        <li><i>在数据库中，将数据从一个系统迁移到另一个具有不同日期格式要求的系统；</i></li>
+        <li><i>在日期选择器 UI 组件中，用户输入的可能是不同的格式；</i></li>
+        <li><i>在报表工具中，对不同数据源的日期格式进行标准化。</i></li>  
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>前提条件</strong>
+    <ul>
+        <li><i>输入应为字符串：日期 ∈ 字符串；</i></li>
+        <li><i>输入应符合以下模式：dd/mm/yyyyy，其中 01 ≤ dd ≤ 31，01 ≤ mm ≤ 12，1900 ≤ yyyy ≤ 2100。</i></li>
+    </ul>
+</p>
