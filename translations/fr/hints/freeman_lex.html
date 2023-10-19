@@ -1,0 +1,141 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Trouvez une idée 💡! Divisez la chaîne donnée en plusieurs parties. Construire un objet date à partir de ces parties et reconvertir cet objet date en une chaîne de caractères au bon format. Après chaque étape, vous vérifiez si les données actuelles sont valides, si ce n'est pas le cas, renvoyez la phrase immédiatement.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Divisez la chaîne donnée en jours, mois et années distincts avec la méthode <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> et le séparateur "/".
+        </p>
+        <pre class="brush: python">
+dd, mm, yyyy = date.split("/")
+        </pre>
+        <p>
+            Faites-le à l'intérieur de <a target="_blank" href="https://www.w3schools.com/python/python_try_except.asp">try/except</a> pour vérifier si la date est valide et attraper l'exception <b class="code">ValueError</b>.
+        </p>
+        <pre class="brush: python">
+try:
+    dd, mm, yyyy = date.split("/")
+except ValueError:
+    return "Error: Invalid date."
+        </pre>       
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire ensuite?
+    </div>
+    <div class="answer">
+        <p>
+            Importez d'abord le module <a target="_blank" href="https://docs.python.org/uk/3/library/datetime.html">datetime</a> et lisez la classe <b class="code">date()</b> et la méthode <b class="code">date.isoformat()</b>. 
+        </p>
+        <pre class="brush: python">
+import datetime
+        </pre>
+        <p>
+            Construisez l'objet date à partir de parties séparées, converties en entier, avec <b class="code">date()</b>. Faites-le à l'intérieur de l'expression <b class="code">try/except</b> et attrapez l'exception <b class="code">ValueError</b>.
+        </p>
+        <pre class="brush: python">
+try:
+    D = datetime.date(int(yyyy), int(mm), int(dd))
+except ValueError:
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        J'ai encore besoin d'un indice.
+    </div>
+    <div class="answer">
+        <p>
+            Convertissez l'objet date au format ISO avec <b class="code">date.isoformat()</b> et vérifiez s'il est égal à une chaîne de caractères, directement construite à partir de parties distinctes.
+        </p>
+        <pre class="brush: python">
+res = D.isoformat()
+if res!= f"{yyyy}-{mm}-{dd}":
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de joindre tous les indices précédents, de renvoyer le résultat et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+import datetime
+
+
+def convert_date(date: str) -> str:
+    
+    try:
+        dd, mm, yyyy = date.split("/")
+    except ValueError:
+        return "Error: Invalid date."
+    
+    try:
+        D = datetime.date(int(yyyy), int(mm), int(dd))
+    except ValueError:
+        return "Error: Invalid date."
+    
+    res = D.isoformat()
+    if res!= f"{yyyy}-{mm}-{dd}":
+        return "Error: Invalid date."
+    
+    return res
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! Je sais et je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>
