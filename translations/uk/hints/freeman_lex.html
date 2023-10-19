@@ -1,0 +1,141 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Я не уявляю, як почати вирішувати цю місію.
+    </div>
+    <div class="answer">
+        <p>
+            Лови ідею 💡! Розділіть заданий рядок на частини. Побудуйте з них об'єкт дати і перетворіть цей об'єкт дати назад у рядок у правильному форматі. Після кожного кроку перевіряйте, чи дійсні поточні дані, якщо ні - негайно повертайте фразу.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Гаразд, з чого мені почати?
+    </div>
+    <div class="answer">
+        <p>
+            Розділіть заданий рядок на окремі день, місяць та рік за допомогою методу <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> з розділювачем "/".
+        </p>
+        <pre class="brush: python">
+dd, mm, yyyy = date.split("/")
+        </pre>
+        <p>
+            Зробіть це всередині <a target="_blank" href="https://www.w3schools.com/python/python_try_except.asp">try/except</a>, щоб перевірити, чи дата дійсна, і перехопити виключення <b class="code">ValueError</b>.
+        </p>
+        <pre class="brush: python">
+try:
+    dd, mm, yyyy = date.split("/")
+except ValueError:
+    return "Error: Invalid date."
+        </pre>       
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Що робити далі?
+    </div>
+    <div class="answer">
+        <p>
+            Спочатку імпортуємо модуль <a target="_blank" href="https://docs.python.org/uk/3/library/datetime.html">datetime</a> та читаємо про клас <b class="code">date()</b> та метод <b class="code">date.isoformat()</b>. 
+        </p>
+        <pre class="brush: python">
+import datetime
+        </pre>
+        <p>
+            Створіть об'єкт дати з окремих частин, перетворених у ціле число, за допомогою методу <b class="code">date()</b>. Зробіть це всередині виразу <b class="code">try/except</b> та перехопіть виключення <b class="code">ValueError</b>.
+        </p>
+        <pre class="brush: python">
+try:
+    D = datetime.date(int(yyyy), int(mm), int(dd))
+except ValueError:
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Мені все ще потрібна підказка.
+    </div>
+    <div class="answer">
+        <p>
+            Перетворіть об'єкт дати у формат ISO за допомогою <b class="code">date.isoformat()</b> і перевірте, чи дорівнює він рядку, безпосередньо зібраному з окремих частин.
+        </p>
+        <pre class="brush: python">
+res = D.isoformat()
+if res!= f"{yyyy}-{mm}-{dd}":
+    return "Error: Invalid date."
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Отже, як має виглядати моє кінцеве рішення?
+    </div>
+    <div class="answer">
+        <p>
+            Вам просто потрібно об'єднати всі попередні підказки, повернути результат і обернути код у вираз функції. Наполегливо рекомендується використовувати підказки типів для вхідних та вихідних даних.
+        </p>
+        <p>Ось весь розв'язок:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+import datetime
+
+
+def convert_date(date: str) -> str:
+    
+    try:
+        dd, mm, yyyy = date.split("/")
+    except ValueError:
+        return "Error: Invalid date."
+    
+    try:
+        D = datetime.date(int(yyyy), int(mm), int(dd))
+    except ValueError:
+        return "Error: Invalid date."
+    
+    res = D.isoformat()
+    if res!= f"{yyyy}-{mm}-{dd}":
+        return "Error: Invalid date."
+    
+    return res
+        </pre>
+        </div>
+        <p>Натисніть <b>Best Solutions</b> в меню місії і побачите багато інших цікавих рішень!</p>
+    </div>
+</div>
+<!-- <div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>
+            
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div> -->
+<div class="question-answer">
+    <div class="question">
+        Дякую! Тепер я знаю і розумію більше! Все працює чудово!
+    </div>
+    <div class="answer">
+        Радий це чути 👍!
+    </div>
+</div>
+</body>
