@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Cette fonction doit prendre une chaîne de date au format <b>dd/mm/yyyy</b> et la convertir au format <b>yyyy-mm-dd</b>. Si l'entrée n'est pas au bon format, la fonction doit renvoyer un message d'erreur <b>"Error: Invalid date."</b>.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}convert-date.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Entrée:</strong> Chaîne <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Sortie:</strong> Chaîne <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Exemples:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Comment l'utiliser:</strong>
+    <ul>
+        <li><i>dans les bases de données, lors de la migration de données d'un système à un autre avec des exigences différentes en matière de format de date;</i></li>
+        <li><i>dans les composants de l'interface utilisateur du sélecteur de date, lorsque les données saisies par l'utilisateur peuvent être dans un format différent;</i></li>
+        <li><i>dans les outils de reporting pour normaliser les formats de date dans différentes sources de données.</i></li>  
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Conditions préalables:</strong>
+    <ul>
+        <li><i>l'entrée doit être une chaîne: date ∈ chaîne;</i></li>
+        <li><i>l'entrée doit correspondre au modèle: dd/mm/yyyy, où 01 ≤ dd ≤ 31, 01 ≤ mm ≤ 12, et 1900 ≤ yyyy ≤ 2100.</i></li>
+    </ul>
+</p>
