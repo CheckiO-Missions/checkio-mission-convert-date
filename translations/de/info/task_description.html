@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Diese Funktion sollte einen Datumsstring im Format <b>dd/mm/yyyy</b> entgegennehmen und in das Format <b>yyyy-mm-dd</b> konvertieren. Wenn die Eingabe nicht im richtigen Format ist, sollte die Funktion eine Fehlermeldung <b>"Error: Invalid date."</b> zurückgeben.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}convert-date.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> String <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Beispiele:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Wie es verwendet wird:</strong>
+    <ul>
+        <li><i>in Datenbanken, bei der Migration von Daten von einem System in ein anderes mit anderen Anforderungen an das Datumsformat;</i></li>
+        <li><i>in Komponenten der Benutzeroberfläche für die Datumsauswahl, wenn die Benutzereingabe in einem anderen Format erfolgen kann;</i></li>
+        <li><i>in Berichtstools, um Datumsformate für verschiedene Datenquellen zu standardisieren.</i></li>  
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingungen:</strong>
+    <ul>
+        <li><i>die Eingabe sollte ein String sein: date ∈ string;</i></li>
+        <li><i>die Eingabe sollte dem Muster: tt/mm/jjjj entsprechen, wobei 01 ≤ tt ≤ 31, 01 ≤ mm ≤ 12 und 1900 ≤ jjjj ≤ 2100.</i></li>
+    </ul>
+</p>
